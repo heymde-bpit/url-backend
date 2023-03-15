@@ -9,6 +9,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	server := newapiServer(":3000", store)
+	server := newapiServer(":8080", store)
 	server.Run()
 }
