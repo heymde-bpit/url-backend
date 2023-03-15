@@ -19,8 +19,8 @@ type MongoStore struct {
 }
 
 func newDBStore() (*MongoStore, error) {
-	//clientOptions := options.Client().ApplyURI("mongodb+srv://mdoffical8a26e:zendaya@cluster1.ikmoqw4.mongodb.net/?retryWrites=true&w=majority")
-	clientOptions := options.Client().ApplyURI(os.Getenv("MONGO_URL"))
+	clientOptions := options.Client().ApplyURI("mongodb+srv://mdoffical8a26e:zendaya@cluster1.ikmoqw4.mongodb.net/?retryWrites=true&w=majority")
+	//clientOptions := options.Client().ApplyURI(os.Getenv("MONGO_URL"))
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 
 	if err != nil {
