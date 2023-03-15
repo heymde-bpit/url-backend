@@ -8,7 +8,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	
+	port := os.Getenv("PORT")
+	
+	if port == "" {
+		port = "8080"
+	}
 
-	server := newapiServer(":8080", store)
+	server := newapiServer(":" + port, store)
 	server.Run()
 }
