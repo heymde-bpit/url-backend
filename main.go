@@ -1,6 +1,7 @@
 package main
 
 import "log"
+import "os"
 
 func main() {
 	store, err := newDBStore()
