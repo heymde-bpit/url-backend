@@ -27,6 +27,7 @@ func newapiServer(listenAddr string, store Storage) *apiServer {
 
 func (h *apiServer) Run() {
 	router := http.NewServeMux()
+	router.Handle("/", http.FileServer(http.Dir("./index.html")))
 	router.Handle("/api/shorten/", h)
 	router.Handle("/api/shorten", h)
 	router.Handle("/s/", h)
